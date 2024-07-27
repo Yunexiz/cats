@@ -2,26 +2,33 @@
 <html>
 <head>
   <title>Random cat</title>
+  <link rel="icon" type="image/x-icon" href="/10.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Image of a random cat" />
+  <meta property="og:description" content="Retrieve the image of a random cat using an API." />
+  <meta property="og:image" content="/10.png" />
+  <meta property="og:url" content="https://cat.is-a.dev" />
+  <style>
+    html, body {
+    height: 100%;
+    margin: 0;
+  }
+    #cat-pics {
+    width: 100%;
+    height: 100%; /* Adjust to match your desired height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #cat-pics img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Or object-fit: cover for different behavior */
+  }
+  </style>
 </head>
-<style>
-  html, body {
-  height: 100%;
-  margin: 0;
-}
-  #cat-pics {
-  width: 100%;
-  height: 100%; /* Adjust to match your desired height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#cat-pics img {
-  width: 100%;
-  height: auto;
-  object-fit: contain; /* Or object-fit: cover for different behavior */
-}
-</style>
 <body>
   <div id="cat-pics"></div>
   <script src="script.js"></script>
