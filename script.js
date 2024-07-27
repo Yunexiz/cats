@@ -3,7 +3,7 @@ const apiUrl = 'https://api.thecatapi.com/v1/images/search';
 fetch(apiUrl)
   .then(response => response.json())
   .then(data => {
-    const imageUrl = data.url;
+    const imageUrl = data[0].url;
     const imageElement = document.createElement('img');
     imageElement.src = imageUrl;
 
