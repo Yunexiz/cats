@@ -17,8 +17,4 @@ fetch(apiUrl)
     console.error('Error fetching cat images:', error);
   });
 
-    });
-  })
-  .catch(error => {
-    console.error('Error fetching cat images:', error);
-  });
+
