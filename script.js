@@ -1,21 +1,16 @@
-fetch('https://meme-api.com/gimme/catpictures')
+const apiUrl = 'https://meme-api.com/gimme/catpictures';
+
+fetch(apiUrl)
   .then(response => response.json())
   .then(data => {
     const imageUrl = data.url;
+    const imageElement = document.createElement('img');
+    imageElement.src = imageUrl;
+    imageElement.alt = 'Cat picture from Reddit' ;
 
-    // Create a new meta tag
-    const ogImageMeta = document.createElement('meta');
-    ogImageMeta.property = 'og:image';
-    ogImageMeta.content = imageUrl;
-
-    // Find the existing og:image meta tag (if any)
-    const existingOgImage = document.querySelector('meta[property="og:image"]');
-    if (existingOgImage) {
-      existingOgImage.parentNode.replaceChild(ogImageMeta, existingOgImage);
-    } else {
-      document.head.appendChild(ogImageMeta);
-    }
+    const imageContainer = document.getElementById('cat-pics');
+    imageContainer.appendChild(imageElement);
   })
   .catch(error => {
-    console.error('Error fetching image:', error);
+    console.error('Error fetching data:', error);
   });
