@@ -8,20 +8,15 @@ fetch(apiUrl)
       const button = document.createElement('button');
       button.textContent = `Image ${index + 1}`;
       button.addEventListener('click', () => {
-        const formData = new FormData();
-        formData.append('imageUrl', cat.url);
-        fetch('/search.html', {
-          method: 'POST',
-          body: formData
-        })
-        .then(response => {
-          window.location.href = '/search.html';
-        })
-        .catch(error => {
-          console.error('Error sending POST request:', error);
-        });
+        window.location.href = `/search?url=${cat.url}`;
       });
       buttonContainer.appendChild(button);
+    });
+  })
+  .catch(error => {
+    console.error('Error fetching cat images:', error);
+  });
+
     });
   })
   .catch(error => {
