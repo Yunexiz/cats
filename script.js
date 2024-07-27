@@ -1,4 +1,4 @@
-const apiUrl = 'https://meme-api.com/gimme/catpictures';
+const apiUrl = 'https://api.thecatapi.com/v1/images/search';
 
 fetch(apiUrl)
   .then(response => response.json())
