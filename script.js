@@ -6,7 +6,6 @@ fetch(apiUrl)
     const imageUrl = data.url;
     const imageElement = document.createElement('img');
     imageElement.src = imageUrl;
-    imageElement.alt = 'Cat picture from Reddit' ;
 
     const imageContainer = document.getElementById('cat-pics');
     imageContainer.appendChild(imageElement);
