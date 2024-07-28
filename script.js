@@ -4,6 +4,8 @@ const buttonContainer = document.getElementById('button-container');
 fetch(apiUrl)
   .then(response => response.json())
   .then(data => {
+    const meta_url = data[0].url
+    document.querySelector("meta[property='og:image']").content = meta_url;
     data.forEach((cat, index) => {
       const button = document.createElement('button');
       button.textContent = `Cat ${index + 1}`;
