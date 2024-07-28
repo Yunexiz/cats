@@ -6,7 +6,7 @@ fetch(apiUrl)
   .then(data => {
     data.forEach((cat, index) => {
       const button = document.createElement('button');
-      button.textContent = `Image ${index + 1}`;
+      button.textContent = `Cat ${index + 1}`;
       button.addEventListener('click', () => {
         window.location.href = `/search?url=${cat.url}`;
       });
