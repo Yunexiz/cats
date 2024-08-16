@@ -8,7 +8,7 @@ fetch(apiUrl)
       const button = document.createElement('button');
       button.textContent = `Cat ${index + 1}`;
       button.addEventListener('click', () => {
-        window.location.href = `${cat.url}`;
+        window.location.href = `/search?url=${cat.url}`;
       });
       buttonContainer.appendChild(button);
     });
