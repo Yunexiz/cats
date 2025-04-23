@@ -60,9 +60,9 @@
   </head>
   <body>
     <button onclick="history.back()">Back</button>
-    <img id="cat-image" src="" alt="Cat Image" style="display: none;" />
+    <img id="image" src="" alt="Cat Image" />
     <script>
-      const imageElement = document.getElementById("dog-image");
+      const imageElement = document.getElementById("image");
 
       const urlParams = new URLSearchParams(window.location.search);
       const imageUrl = urlParams.get("url");
