@@ -21,7 +21,7 @@ fetch(apiUrl)
         prefixes[Math.floor(Math.random() * prefixes.length)];
       button.textContent = `${randomPrefix} ${index + 1}`;
       button.addEventListener("click", () => {
-        window.location.href = `/search?url=${cat.url}`;
+        window.location.href = `/display?url=${cat.url}`;
       });
       buttonContainer.appendChild(button);
     });
