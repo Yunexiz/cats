@@ -12,7 +12,8 @@
         background-color: #000;
       }
 
-      #cat-image {
+      #image {
+        display: none;
         max-width: 100%;
         max-height: 100%;
         width: auto;
@@ -67,6 +68,7 @@
       const urlParams = new URLSearchParams(window.location.search);
       const imageUrl = urlParams.get("url");
       imageElement.src = imageUrl;
+      imageElement.display = "block";
     </script>
   </body>
 </html>
