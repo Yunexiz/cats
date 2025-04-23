@@ -61,6 +61,12 @@
   <body>
     <button onclick="history.back()">Back</button>
     <img id="cat-image" src="" alt="Cat Image" style="display: none;" />
-    <script src="display.js"></script>
+    <script>
+      const imageElement = document.getElementById("dog-image");
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const imageUrl = urlParams.get("url");
+      imageElement.src = imageUrl;
+    </script>
   </body>
 </html>
