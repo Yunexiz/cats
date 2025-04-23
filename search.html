@@ -1,33 +1,66 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Cat Image Search</title>
-<style>
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin: 0;
-    background-color: #000000;
-  }
-  #cat-image {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #000000;
-  }
-</style>
-</head>
-<body>
-  <img id="cat-image" src="" alt="Cat Image" style="display: none;">
-  <script src="search.js"></script>
-</body>
+  <head>
+    <title>Cat Image Search</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin: 0;
+        background-color: #000;
+      }
+
+      #cat-image {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000;
+      }
+
+      button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(
+          to right,
+          #000 10%,
+          #4a90e2 25%,
+          #3fbdd7 50%,
+          #50e3c2 75%,
+          #000 90%
+        );
+        background-size: 200%;
+        background-position: -50%;
+        color: white;
+        cursor: pointer;
+        text-align: center;
+        font-size: 1rem;
+        padding: 10px;
+        margin: 5px;
+        outline: 1px solid #3fbdd7;
+        border: none;
+        border-radius: 5px;
+        transition: color 1s ease-in-out, background-position 1s ease-in-out;
+      }
+
+      button:hover {
+        background-position: 50%;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="history.back()">Back</button>
+    <img id="cat-image" src="" alt="Cat Image" style="display: none;" />
+    <script src="search.js"></script>
+  </body>
 </html>
