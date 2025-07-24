@@ -3,6 +3,23 @@
   <head>
     <title>Cat Display</title>
     <style>
+      :root {
+        --accent-start: #4a90e2;
+        --accent-mid: #3fbdd7;
+        --accent-end: #50e3c2;
+        --button-accent: #000;
+        --text-color: #fff;
+        --secondary-text-color: #000;
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --button-accent: #fff;
+          --text-color: #000;
+          --secondary-text-color: #fff;
+        }
+      }
+
       body {
         display: flex;
         justify-content: center;
@@ -28,47 +45,45 @@
       }
 
       button {
-        position: absolute;
-        top: 0;
-        left: 0;
+        display: inline-block;
         background: linear-gradient(
           to right,
-          #000 10%,
-          #4a90e2 25%,
-          #3fbdd7 50%,
-          #50e3c2 75%,
-          #000 90%
+          var(--button-accent) 10%,
+          var(--accent-start) 25%,
+          var(--accent-mid) 50%,
+          var(--accent-end) 75%,
+          var(--button-accent) 90%
         );
         background-size: 200%;
         background-position: -50%;
-        color: white;
+        color: var(--text-color);
         cursor: pointer;
         text-align: center;
         font-size: 1rem;
-        padding: 5px 10px;
-        margin: 5px;
-        outline: 1px solid #3fbdd7;
+        padding: 0 10px;
+        outline: 1px solid var(--accent-mid);
         border: none;
-        border-radius: 10px;
+        border-radius: 5px;
         transition: color 1s ease-in-out, background-position 1s ease-in-out;
       }
 
       button:hover {
         background-position: 50%;
-        color: black;
+        color: var(--secondary-text-color);
       }
     </style>
+
+    <script defer>
+      const imageElement = document.getElementById("image");
+      const urlParams = new URLSearchParams(window.location.search);
+      const imageUrl = urlParams.get("url");
+
+      imageElement.src = imageUrl;
+      imageElement.style.display = "block";
+    </script>
   </head>
   <body>
     <button onclick="history.back()">Back</button>
     <img id="image" src="" alt="Cat Image" />
-    <script>
-      const imageElement = document.getElementById("image");
-
-      const urlParams = new URLSearchParams(window.location.search);
-      const imageUrl = urlParams.get("url");
-      imageElement.src = imageUrl;
-      imageElement.style.display = "block";
-    </script>
   </body>
 </html>
