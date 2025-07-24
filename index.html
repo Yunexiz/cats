@@ -215,13 +215,14 @@
         })
         .catch((error) => {
           console.error("Error fetching cat images:", error);
+        })
+        .then(() => {
+          document.querySelectorAll("button").forEach((button, index) => {
+            setTimeout(() => {
+              button.style.opacity = "1";
+            }, index * 100);
+          });
         });
-
-      document.querySelectorAll("button").forEach((button, index) => {
-        setTimeout(() => {
-          button.style.opacity = "1";
-        }, index * 100);
-      });
     </script>
   </body>
 </html>
