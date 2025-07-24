@@ -72,7 +72,10 @@
         color: var(--secondary-text-color);
       }
     </style>
-
+  </head>
+  <body>
+    <button onclick="history.back()">Back</button>
+    <img id="image" src="" alt="Cat Image" />
     <script defer>
       const imageElement = document.getElementById("image");
       const urlParams = new URLSearchParams(window.location.search);
@@ -81,9 +84,5 @@
       imageElement.src = imageUrl;
       imageElement.style.display = "block";
     </script>
-  </head>
-  <body>
-    <button onclick="history.back()">Back</button>
-    <img id="image" src="" alt="Cat Image" />
   </body>
 </html>

@@ -167,8 +167,24 @@
         }
       }
     </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="instructions">
+        <span>Instructions</span>
+        <ol>
+          <li>It's simple, press a button, load a cat.</li>
+          <li>Going back will keep the images the same.</li>
+          <li>Refreshing will load new cats.</li>
+        </ol>
+      </div>
+      <div id="button-container"></div>
+    </div>
+    <div class="message">
+      <footer>The kitty in the background is Sisi :3</footer>
+    </div>
 
-    <script defer>
+    <script>
       const apiUrl = "https://api.thecatapi.com/v1/images/search?limit=10";
       const buttonContainer = document.getElementById("button-container");
 
@@ -207,21 +223,5 @@
         }, index * 100);
       });
     </script>
-  </head>
-  <body>
-    <div id="container">
-      <div id="instructions">
-        <span>Instructions</span>
-        <ol>
-          <li>It's simple, press a button, load a cat.</li>
-          <li>Going back will keep the images the same.</li>
-          <li>Refreshing will load new cats.</li>
-        </ol>
-      </div>
-      <div id="button-container"></div>
-    </div>
-    <div class="message">
-      <footer>The kitty in the background is Sisi :3</footer>
-    </div>
   </body>
 </html>
